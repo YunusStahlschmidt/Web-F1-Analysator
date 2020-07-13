@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Results</legend>
+                    <table class="table-bordered">
+                         <tr style="background: #428bca">
+                             {% for head in result.headings %}
+                                <th>{{head}}</th>
+                             {% endfor %}
+                         </tr>
+                        {% for r in result.data %}
+                            {% for i in range(num_rows)  %}
+                                {% if i == last_col  %}
+                                    {% if result.table == "Status Table" or result.table == "Qualifying Table" %}
+                                        <td>{{ r[i] }}</td>
+                                    {% elif result.table == "Results Table" %}
+                                        <td>{{ r[i]|int }}</td>
+                                    {% elif result.table == "Circuit Table" %}
+                                        <td>
+                                            <a href={{ r[i] }}>Description</a>
+                                        </td>
+                                    {% elif result.table == "Driver Table" %}
+                                        <td>
+                                            <a href={{ r[i] }}>Biography</a>
+                                        </td>
+                                    {% elif result.table == "Constructor Table" or result.table == "Season Table"%}
+                                        <td>
+                                            <a href={{ r[i] }}>Review</a>
+                                        </td>
+                                    {% elif result.table == "Race Table" %}
+                                        <td>
+                                            <a href={{ r[i] }}>Report</a>
+                                        </td>
+                                    {% endif %}
+                                {% else %}
+                                    <td>{{ r[i] }}</td>
+                                {% endif %}
+                            {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+        </fieldset>
+    </div>
+{% endblock content %}
