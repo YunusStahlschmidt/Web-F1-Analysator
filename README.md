@@ -1,4 +1,4 @@
-# Web-based-F1-Analysator-and-Predictor
+# Web-based-F1-Analysator
 Tool for analyzing and reviewing Formula 1 race results, driver statistics, etc.
 Used Tools:
   1. Python PL / Flask for the backend and website
