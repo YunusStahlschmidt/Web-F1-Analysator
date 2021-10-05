@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'b61fc7bf8219a999f17de110287f65ce'
 db = mysql.connector.connect(host="localhost",
                              user="root",
-                             password="MDBpPs2020fSQL",
+                             password="xxx",
                              database="f1db")
 cursor = db.cursor(app)
 bcrypt = Bcrypt(app)
